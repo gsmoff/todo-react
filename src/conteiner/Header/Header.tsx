@@ -8,7 +8,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Menu from "../../components/Menu";
-
+import CartHeader from "../../components/Cart/CartHeader";
 
 type Props = {};
 
@@ -30,7 +30,8 @@ const Header = (props: Props) => {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Fake Shop
             </Typography>
-            <Menu/>
+            <Menu />
+            <CartHeader/>
           </Toolbar>
         </Container>
       </AppBar>
