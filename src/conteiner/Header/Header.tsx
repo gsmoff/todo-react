@@ -9,13 +9,14 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Menu from "../../components/Menu";
 import CartHeader from "../../components/Cart/CartHeader";
+import '../Header/Header.scss'
 
 type Props = {};
 
 const Header = (props: Props) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" className="app-bar">
         <Container maxWidth="lg">
           <Toolbar>
             <IconButton
@@ -31,7 +32,7 @@ const Header = (props: Props) => {
               Fake Shop
             </Typography>
             <Menu />
-            <CartHeader/>
+            <CartHeader />
           </Toolbar>
         </Container>
       </AppBar>

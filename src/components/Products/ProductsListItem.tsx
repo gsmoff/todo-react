@@ -1,4 +1,6 @@
 import { Card, CardContent, CardActions, Button } from "@mui/material";
+// import classes from "../Products/ProductsListItem.module.сіі";
+import "../Products/ProductsListItem.scss";
 import React from "react";
 
 type Props = {
@@ -11,16 +13,21 @@ type Props = {
 
 const ProductsListItem = (props: Props) => {
   return (
-    <Card>
+    <Card className="product">
       <CardContent>
         <h4>{props.name}</h4>
-        <p>{props.description}</p>
-        <div>{props.type}</div>
-        <div>{props.capacity}</div>
-        <div>{props.price}</div>
+        <p className="product-description">{props.description}</p>
+        <div className="product-features">
+          <span>Type: </span>
+          {props.type}
+        </div>
+        <div className="product-features">
+          <span>Capacity:</span> {props.capacity} Gb
+        </div>
+        <div className="product-price">Price: {props.price} $</div>
       </CardContent>
-      <CardActions>
-        <Button>Add to crt</Button>
+      <CardActions className="btn-wrap">
+        <Button variant="outlined">Add to cart</Button>
       </CardActions>
     </Card>
   );
