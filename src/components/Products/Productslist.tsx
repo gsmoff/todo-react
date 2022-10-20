@@ -10,6 +10,7 @@ type ProductProps = {
   type: string;
   capacity: number;
   price: number;
+  image: string;
 };
 type Props = {};
 
@@ -38,11 +39,16 @@ const Productslist = (props: Props) => {
         spacing={4}
       >
         {productsArray.map(
-          ({ name, description, type, capacity, price, }: ProductProps,
+          (
+            { name, description, type, capacity, price, image, }: ProductProps,
             // i
             id
           ) => (
-            <Grid item xs={12} sm={6} md={4}
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={4}
               // key={i}
               key={id}
             >
@@ -52,6 +58,7 @@ const Productslist = (props: Props) => {
                 type={type}
                 capacity={capacity}
                 price={price}
+                image={image}
               />
             </Grid>
           )

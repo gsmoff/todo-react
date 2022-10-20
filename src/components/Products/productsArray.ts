@@ -5,6 +5,7 @@ type Product = {
     type: string;
     capacity: number;
     price: number;
+    image: string;
 };
 const productsArray:Product[] = [
     {
@@ -14,6 +15,7 @@ const productsArray:Product[] = [
         type: "phone",
         capacity: 64,
         price: 500,
+        image: '/images/iphone-gold.jpg'
     },
     {
         id:2,
@@ -22,6 +24,8 @@ const productsArray:Product[] = [
         type: "phone",
         capacity: 128,
         price: 800,
+        image: '/images/iphone-blu.jpg'
+
     },
     {
         id:3,
@@ -30,6 +34,8 @@ const productsArray:Product[] = [
         type: "phone",
         capacity: 256,
         price: 600,
+        image: '/images/iphone-green.jpg'
+
     },
     {
         id:4,
@@ -38,6 +44,8 @@ const productsArray:Product[] = [
         type: "phone",
         capacity: 64,
         price: 500,
+        image: '/images/iphone-purple.jpg'
+
     },
     {
         id:5,
@@ -46,6 +54,8 @@ const productsArray:Product[] = [
         type: "phone",
         capacity: 512,
         price: 700,
+        image: '/images/iphone-red.jpg'
+
     },
     {
         id:6,
@@ -54,6 +64,8 @@ const productsArray:Product[] = [
         type: "phone",
         capacity: 64,
         price: 700,
+        image: '/images/iphone-silver.jpg'
+
     },
     {
         id:7,
@@ -62,6 +74,8 @@ const productsArray:Product[] = [
         type: "phone",
         capacity: 128,
         price: 900,
+        image: '/images/iphone-yellow.jpg'
+
     },
         {
         id:8,
@@ -69,7 +83,9 @@ const productsArray:Product[] = [
         description: "This is iphone 12",
         type: "phone",
         capacity: 512,
-        price: 700,
+            price: 700,
+        image: '/images/iphone-black.jpg'
+        
     },
 ]
 
