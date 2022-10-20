@@ -11,18 +11,6 @@ type Props = {
   price: number;
 };
 
-// @ts-ignore
-
-// const user = {
-//   name: 'Jack',
-//   age: 20,
-//   sex:'male',
-// }
-// const { name, age, sex } = user
-// console.log(name);
-// console.log(age);
-// console.log(sex);
-
 const ProductsListItem = ({
   name,
   description,
