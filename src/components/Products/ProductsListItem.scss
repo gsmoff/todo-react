@@ -24,9 +24,17 @@
 }
 .product-image {
         img {
-            width: 150px;
+            width: 300px;
             height: auto;
         }
         
         text-align: center;
     }
+.product-quantity {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    input {
+        text-align: center;
+    }
+}
