@@ -29,22 +29,14 @@ const ProductsListItem = ({
 }: Props) => {
   const [count, setCount] = useState<number>(1);
 
-  const [color, setColor] = useState<string>('green');
+  const [color, setColor] = useState<string>("green");
 
-  const onIncrementClick = () =>
-    setCount((prevState: number) => prevState + 1)
-  
-  const onDecrementClick = () =>
-    setCount((prevState: number) => prevState - 1)
-  
-  const changeColor = () => 
-    setColor((prevState: string) =>  prevState === "green" ? "red" : "green")
-  
-    // changeColor = () => {
-    //   this.setState((prevState: State) => ({
-    //     color: prevState.color === "green" ? "red" : "green",
-    //   }));
-    // };
+  const onIncrementClick = () => setCount((prevState: number) => prevState + 1);
+
+  const onDecrementClick = () => setCount((prevState: number) => prevState - 1);
+
+  const changeColor = () =>
+    setColor((prevState: string) => (prevState === "green" ? "red" : "green"));
 
   return (
     <Card className="product">
@@ -64,12 +56,17 @@ const ProductsListItem = ({
         <div className="product-price">Price: {price} $</div>
 
         <div>
-          <p>Color:green</p>
-          <button>Change color</button>
+          <p>Color:{color}</p>
+          <button onClick={changeColor}>Change color</button>
         </div>
 
         <div className="product-quantity">
-          <Button variant="contained" size="small" onClick={onDecrementClick}>
+          <Button
+            variant="contained"
+            size="small"
+            onClick={onDecrementClick}
+            disabled={count <= 1}
+          >
             -
           </Button>
           <TextField size="small" value={count} variant="outlined" />
@@ -78,6 +75,7 @@ const ProductsListItem = ({
             size="small"
             // onClick={() => setCount(count + 1)}
             onClick={onIncrementClick}
+            disabled={count >= 10}
           >
             +
           </Button>
