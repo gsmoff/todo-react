@@ -36,6 +36,15 @@ const ProductsListItem = ({
   
   const onDecrementClick = () =>
     setCount((prevState: number) => prevState - 1)
+  
+  const changeColor = () => 
+    setColor((prevState: string) =>  prevState === "green" ? "red" : "green")
+  
+    // changeColor = () => {
+    //   this.setState((prevState: State) => ({
+    //     color: prevState.color === "green" ? "red" : "green",
+    //   }));
+    // };
 
   return (
     <Card className="product">
