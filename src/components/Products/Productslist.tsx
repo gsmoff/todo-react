@@ -12,9 +12,9 @@ type ProductProps = {
   price: number;
   image: string;
 };
-type Props = {};
+type Props = { addProductToCart: (count: number, price: number) => void };
 
-const Productslist = (props: Props) => {
+const Productslist = ({ addProductToCart }: Props) => {
   return (
     <>
       <Typography
@@ -40,7 +40,7 @@ const Productslist = (props: Props) => {
       >
         {productsArray.map(
           (
-            { name, description, type, capacity, price, image, }: ProductProps,
+            { name, description, type, capacity, price, image }: ProductProps,
             // i
             id
           ) => (
@@ -59,6 +59,7 @@ const Productslist = (props: Props) => {
                 capacity={capacity}
                 price={price}
                 image={image}
+                addProductToCart={addProductToCart}
               />
             </Grid>
           )

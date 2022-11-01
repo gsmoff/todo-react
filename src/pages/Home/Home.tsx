@@ -1,14 +1,14 @@
-import Productslist from '../../components/Products/Productslist'
-import React from 'react'
+import Productslist from "components/Products/Productslist";
+import React from "react";
 
-type Props = {}
+type Props = { addProductToCart: (count: number, price: number) => void };
 
-const Home = (props: Props) => {
-    return (
-      <>
-        <Productslist />
-      </>
-    );
-}
+const Home = ({ addProductToCart }: Props) => {
+  return (
+    <>
+      <Productslist addProductToCart={addProductToCart} />
+    </>
+  );
+};
 
-export default Home
+export default Home;
