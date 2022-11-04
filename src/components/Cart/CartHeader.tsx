@@ -1,15 +1,17 @@
 import React from "react";
-import productsArray,
-{ getProductsObject, Product,} from 'components/Products/productsArray'
+import productsArray, {
+  getProductsObject,
+  Product,
+} from "components/Products/productsArray";
 
 type Props = {
   productsInCart: {
-    [id: number]: number
-  },
+    [id: number]: number;
+  };
   productsObject?: {
-  [key: number]:Product
-}
-}
+    [key: number]: Product;
+  };
+};
 
 const CartHeader = ({
   productsInCart,
@@ -17,15 +19,27 @@ const CartHeader = ({
 }: Props) => {
   return (
     <div>
-      {Object.keys(productsInCart).map((productId) => (
-        <div key={productId}>
-          {productsObject[parseInt(productId)].name}:{" "}
-          {productsInCart[parseInt(productId)]}
-        </div>
-      ))}
+      <div>
+        {Object.keys(productsInCart).map((productId) => (
+          <div key={productId}>
+            {productsObject[parseInt(productId)].name}:{" "}
+            {productsInCart[parseInt(productId)]}
+          </div>
+        ))}
+      </div>
+      <div>
+        Total:{" "}
+        {Object.keys(productsInCart).reduce(
+          (sum, productId) =>
+            sum +
+            productsObject[parseInt(productId)].price *
+              productsInCart[parseInt(productId)],
+          0
+        )}{" "}
+        $
+      </div>
     </div>
   );
 };
-
 
 export default CartHeader;
