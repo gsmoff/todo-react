@@ -22,12 +22,13 @@ const App = (props: Props) => {
     2: 5,
   });
 
-  const addProductToCart = (count: number, price: number) => {
-    // setCartData((prevState: CartData) => ({
-    //   totalCount: prevState.totalCount + count,
-    //   totalPrice: prevState.totalPrice + count * price,
-    // }));
-  };
+const addProductToCart = (id: number, count: number) => {
+  setProductsInCart((prevState: AppProps) => ({
+    ...prevState,
+    [id]: (prevState[id] || 0) + count,
+  }));
+};
+
 
   return (
     <StyledEngineProvider injectFirst>

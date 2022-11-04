@@ -12,7 +12,7 @@ type ProductProps = {
   price: number;
   image: string;
 };
-type Props = { addProductToCart: (count: number, price: number) => void };
+type Props = { addProductToCart: (id: number, count: number) => void };
 
 const Productslist = ({ addProductToCart }: Props) => {
   return (
@@ -39,11 +39,15 @@ const Productslist = ({ addProductToCart }: Props) => {
         spacing={4}
       >
         {productsArray.map(
-          (
-            { name, description, type, capacity, price, image }: ProductProps,
-            // i
-            id
-          ) => (
+          ({
+            id,
+            name,
+            description,
+            type,
+            capacity,
+            price,
+            image,
+          }: ProductProps) => (
             <Grid
               item
               xs={12}
@@ -53,6 +57,7 @@ const Productslist = ({ addProductToCart }: Props) => {
               key={id}
             >
               <ProductsListItem
+                id={id}
                 name={name}
                 description={description}
                 type={type}

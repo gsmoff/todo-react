@@ -7,15 +7,21 @@
 .product h4 {
   font-size: 23px;
 }
+
 .product .product-description {
   font-size: 19px;
 }
-.product .product-price {
+
+.product .product-count {
   font-size: 22px;
 }
+
 .product .product-features {
   font-size: 18px;
 }
+
 .product .product-features span {
   font-weight: bold;
-}/*# sourceMappingURL=ProductsListItem.css.map */
+}
+
+/*# sourceMappingURL=ProductsListItem.css.map */

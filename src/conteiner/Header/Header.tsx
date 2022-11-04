@@ -10,7 +10,7 @@ import Container from "@mui/material/Container";
 import Menu from "../../components/Menu";
 import CartHeader from "../../components/Cart/CartHeader";
 import "../Header/Header.scss";
-import logo from 'assets/logo.svg'
+import logo from "assets/logo.svg";
 
 type Props = {
   productsInCart: {

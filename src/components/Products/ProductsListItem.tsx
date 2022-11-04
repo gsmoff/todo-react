@@ -11,16 +11,18 @@ import React, { useState } from "react";
 import { green } from "@mui/material/colors";
 
 type Props = {
+  id: number;
   name: string;
   description: string;
   type: string;
   capacity: number;
   price: number;
   image: string;
-  addProductToCart: (count: number, price: number) => void;
+  addProductToCart: (id: number, count: number) => void;
 };
 
 const ProductsListItem = ({
+  id,
   name,
   description,
   type,
