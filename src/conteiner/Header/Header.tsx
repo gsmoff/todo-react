@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Menu from "../../components/Menu";
+import Menu from "../../components/Menu/Menu";
 import CartHeader from "../../components/Cart/CartHeader";
 import "../Header/Header.scss";
 import logo from "assets/logo.svg";

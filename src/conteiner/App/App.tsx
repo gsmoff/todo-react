@@ -34,7 +34,10 @@ const addProductToCart = (id: number, count: number) => {
     <StyledEngineProvider injectFirst>
       <CssBaseline />
       <Header productsInCart={productsInCart} />
-      <Main addProductToCart={addProductToCart} />
+      <Main
+        addProductToCart={addProductToCart}
+        productsInCart={productsInCart}
+      />
       <Footer />
     </StyledEngineProvider>
   );
