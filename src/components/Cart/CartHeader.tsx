@@ -1,8 +1,5 @@
 import React from "react";
-import productsArray, {
-  getProductsObject,
-  Product,
-} from "components/Products/productsArray";
+import  {  Product } from "components/Products/productsArray";
 import CartTotal from "./CartTotal";
 import CartProductList from "./CartProductList";
 
@@ -18,12 +15,11 @@ type Props = {
 
 const CartHeader = ({
   productsInCart,
-  productsObject = getProductsObject(productsArray),
 }: Props) => {
   return (
     <div>
-      <CartProductList productsInCart={productsInCart}/>
-      <CartTotal productsInCart={productsInCart}/>
+      <CartProductList productsInCart={productsInCart} />
+      <CartTotal productsInCart={productsInCart} />
     </div>
   );
 };

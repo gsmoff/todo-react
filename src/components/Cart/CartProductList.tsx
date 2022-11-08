@@ -3,7 +3,7 @@ import productsArray, {
   getProductsObject,
   Product,
 } from "components/Products/productsArray";
-import CartTotal from "./CartTotal";
+import CartProductListItem from "./CartProductListItem";
 
 type Props = {
   productsInCart: {
@@ -12,22 +12,25 @@ type Props = {
   productsObject?: {
     [key: number]: Product;
   };
+  CartItem?: any;
 };
 
 const CartProductList = ({
   productsInCart,
   productsObject = getProductsObject(productsArray),
+  CartItem = CartProductListItem,
 }: Props) => {
-    return (
-      <div>
-        {Object.keys(productsInCart).map((productId) => (
-          <div key={productId}>
-            {productsObject[parseInt(productId)].name}:{" "}
-            {productsInCart[parseInt(productId)]}
-          </div>
-        ))}
-      </div>
-    );
+  return (
+    <div>
+      {Object.keys(productsInCart).map((productId) => (
+        <CartItem
+          key={productId}
+          product={productsObject[parseInt(productId)]}
+          productCount={productsInCart[parseInt(productId)]}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default CartProductList;
