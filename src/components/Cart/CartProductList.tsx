@@ -4,8 +4,6 @@ import productsArray, {
   Product,
 } from "components/Products/productsArray";
 import CartTotal from "./CartTotal";
-import CartProductList from "./CartProductList";
-
 
 type Props = {
   productsInCart: {
@@ -16,16 +14,20 @@ type Props = {
   };
 };
 
-const CartHeader = ({
+const CartProductList = ({
   productsInCart,
   productsObject = getProductsObject(productsArray),
 }: Props) => {
-  return (
-    <div>
-      <CartProductList productsInCart={productsInCart}/>
-      <CartTotal productsInCart={productsInCart}/>
-    </div>
-  );
+    return (
+      <div>
+        {Object.keys(productsInCart).map((productId) => (
+          <div key={productId}>
+            {productsObject[parseInt(productId)].name}:{" "}
+            {productsInCart[parseInt(productId)]}
+          </div>
+        ))}
+      </div>
+    );
 };
 
-export default CartHeader;
+export default CartProductList;

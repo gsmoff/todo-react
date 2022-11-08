@@ -3,9 +3,6 @@ import productsArray, {
   getProductsObject,
   Product,
 } from "components/Products/productsArray";
-import CartTotal from "./CartTotal";
-import CartProductList from "./CartProductList";
-
 
 type Props = {
   productsInCart: {
@@ -16,16 +13,23 @@ type Props = {
   };
 };
 
-const CartHeader = ({
+const CartTotal = ({
   productsInCart,
   productsObject = getProductsObject(productsArray),
 }: Props) => {
   return (
     <div>
-      <CartProductList productsInCart={productsInCart}/>
-      <CartTotal productsInCart={productsInCart}/>
+      Total:{" "}
+      {Object.keys(productsInCart).reduce(
+        (sum, productId) =>
+          sum +
+          productsObject[parseInt(productId)].price *
+            productsInCart[parseInt(productId)],
+        0
+      )}{" "}
+      $
     </div>
   );
 };
 
-export default CartHeader;
+export default CartTotal;
