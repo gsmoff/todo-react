@@ -9,7 +9,7 @@ import {
 import "../Products/ProductsListItem.scss";
 import React, { useState } from "react";
 import { green } from "@mui/material/colors";
-
+import Guantity from 'components/Guantity/Guantity'
 type Props = {
   id: number;
   name: string;
@@ -55,7 +55,7 @@ const ProductsListItem = ({
           {type}
         </div>
         <div className="product-features">
-          <span>Capacity:</span> {capacity} Gb
+          <span>Capacity:</span > {capacity} Gb
         </div>
         <div className="product-price">Price: {price} $</div>
 
@@ -63,27 +63,11 @@ const ProductsListItem = ({
           <p>Color:{color}</p>
           <button onClick={changeColor}>Change color</button>
         </div>
-
-        <div className="product-quantity">
-          <Button
-            variant="contained"
-            size="small"
-            onClick={onDecrementClick}
-            disabled={count <= 1}
-          >
-            -
-          </Button>
-          <TextField size="small" value={count} variant="outlined" />
-          <Button
-            variant="contained"
-            size="small"
-            onClick={() => setCount(count + 1)}
-
-            disabled={count >= 10}
-          >
-            +
-          </Button>
-        </div>
+        <Guantity 
+          onDecrementClick={onDecrementClick}
+          onIncrementClick={onIncrementClick}
+          count={count}
+        />
       </CardContent>
       <CardActions className="btn-wrap">
         <Button

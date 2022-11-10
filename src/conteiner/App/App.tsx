@@ -16,8 +16,8 @@ type AppProps = {
 
 const App = (props: Props) => {
   const [productsInCart, setProductsInCart] = useState<AppProps>({
-    1: 5,
-    2: 5,
+    1: 2,
+    2: 3,
   });
 
   const addProductToCart = (id: number, count: number) => {
@@ -38,6 +38,14 @@ const App = (props: Props) => {
     );
   };
 
+const changeProductQuantity = (id: number, count: number) => {
+  setProductsInCart((prevState: AppProps) => ({
+    ...prevState,
+    [id]: count,
+  }));
+};
+
+
   return (
     <StyledEngineProvider injectFirst>
       <CssBaseline />
@@ -47,6 +55,7 @@ const App = (props: Props) => {
         addProductToCart={addProductToCart}
         productsInCart={productsInCart}
         removeProductFromCart={removeProductFromCart}
+        changeProductQuantity={changeProductQuantity}
       />
       <Footer />
     </StyledEngineProvider>
