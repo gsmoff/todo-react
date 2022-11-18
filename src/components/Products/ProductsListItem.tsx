@@ -13,6 +13,7 @@ import Guantity from "components/Guantity/Guantity";
 
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import { useAppSelector } from "redux/hooks";
 
 type Props = {
   id: number;
@@ -23,7 +24,7 @@ type Props = {
   price: number;
   image: string;
   addProductToCart: (id: number, count: number) => void;
-  isLiked?: boolean;
+  // isLiked?: boolean;
 };
 
 const ProductsListItem = ({
@@ -35,7 +36,7 @@ const ProductsListItem = ({
   price,
   image,
   addProductToCart,
-  isLiked,
+  // isLiked,
 }: Props) => {
   const [count, setCount] = useState<number>(1);
 
@@ -47,6 +48,8 @@ const ProductsListItem = ({
 
   const changeColor = () =>
     setColor((prevState: string) => (prevState === "green" ? "red" : "green"));
+  
+  const isLiked = useAppSelector((state) => state.productsLikeState[id])
 
   return (
     <Card className="product">
