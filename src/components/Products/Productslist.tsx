@@ -12,9 +12,9 @@ type ProductProps = {
   price: number;
   image: string;
 };
-type Props = { addProductToCart: (id: number, count: number) => void };
+type Props = { };
 
-const Productslist = ({ addProductToCart }: Props) => {
+const Productslist = () => {
   return (
     <>
       <Typography
@@ -64,7 +64,6 @@ const Productslist = ({ addProductToCart }: Props) => {
                 capacity={capacity}
                 price={price}
                 image={image}
-                addProductToCart={addProductToCart}
               />
             </Grid>
           )

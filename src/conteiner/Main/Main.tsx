@@ -7,39 +7,13 @@ import ShippingPage from "pages/Shipping/ShippingPage";
 import PaymentPage from "pages/Payment/PaymentPage";
 import { Routes, Route } from "react-router-dom";
 
-type Props = {
-  addProductToCart: (id: number, count: number) => void;
-  productsInCart: {
-    [id: number]: number;
-  };
-  removeProductFromCart: (id: number) => void;
-  changeProductQuantity: (id: number, count:number) => void;
-};
-
-const Main = ({
-  addProductToCart,
-  productsInCart,
-  removeProductFromCart,
-  changeProductQuantity,
-}: Props) => {
+const Main = () => {
   return (
     <main>
       <Container maxWidth="lg">
         <Routes>
-          <Route
-            path="/"
-            element={<Home addProductToCart={addProductToCart} />}
-          />
-          <Route
-            path="cart"
-            element={
-              <CartPage
-                productsInCart={productsInCart}
-                removeProductFromCart={removeProductFromCart}
-                changeProductQuantity={changeProductQuantity}
-              />
-            }
-          />
+          <Route path="/" element={<Home />} />
+          <Route path="cart" element={<CartPage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="shipping" element={<ShippingPage />} />
           <Route path="payment" element={<PaymentPage />} />

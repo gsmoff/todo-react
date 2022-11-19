@@ -12,13 +12,9 @@ import CartHeader from "../../components/Cart/CartHeader";
 import "../Header/Header.scss";
 import logo from "assets/logo.svg";
 
-type Props = {
-  productsInCart: {
-    [id: number]: number;
-  };
-};
+type Props = {};
 
-const Header = ({ productsInCart }: Props) => {
+const Header = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" className="app-bar">
@@ -37,7 +33,7 @@ const Header = ({ productsInCart }: Props) => {
               <img src={logo} />
             </Typography>
             <Menu />
-            <CartHeader productsInCart={productsInCart} />
+            <CartHeader />
           </Toolbar>
         </Container>
       </AppBar>
