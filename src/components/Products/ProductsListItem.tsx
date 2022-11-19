@@ -13,7 +13,8 @@ import Guantity from "components/Guantity/Guantity";
 
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import { useAppSelector } from "redux/hooks";
+import { useAppDispatch, useAppSelector } from "redux/hooks";
+import { removeLike, addLike } from "redux/likeReducer";
 
 type Props = {
   id: number;
@@ -36,8 +37,8 @@ const ProductsListItem = ({
   price,
   image,
   addProductToCart,
-  // isLiked,
-}: Props) => {
+}: // isLiked,
+Props) => {
   const [count, setCount] = useState<number>(1);
 
   const [color, setColor] = useState<string>("green");
@@ -48,8 +49,10 @@ const ProductsListItem = ({
 
   const changeColor = () =>
     setColor((prevState: string) => (prevState === "green" ? "red" : "green"));
-  
-  const isLiked = useAppSelector((state) => state.productsLikeState[id])
+
+  const isLiked = useAppSelector((state) => state.productsLikeState[id]);
+
+  const dispatsh = useAppDispatch();
 
   return (
     <Card className="product">
@@ -57,8 +60,15 @@ const ProductsListItem = ({
         <div className="product-image">
           <img src={image} alt={name} />
         </div>
-        <Button>
-          {isLiked ? <FavoriteIcon/> : <FavoriteBorderIcon/>}
+        <Button
+          variant="outlined"
+          onClick={() =>
+            isLiked
+              ? dispatsh(removeLike(id))
+              : dispatsh(addLike(id))
+          }
+        >
+          {isLiked ? <FavoriteIcon /> : <FavoriteBorderIcon />}
         </Button>
         <h4>{name}</h4>
         <p className="product-description">{description}</p>
