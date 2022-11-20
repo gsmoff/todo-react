@@ -59,10 +59,12 @@ const CartProductListItemExtended = ({ product, productCount }: Props) => {
                   );
             }}
             onIncrementClick={() =>
-              changeProductQuantity({
-                id: product.id,
-                count: productCount - 1,
-              })
+              dispatsh(
+                changeProductQuantity({
+                  id: product.id,
+                  count: productCount + 1,
+                })
+              )
             }
           />
           <Button

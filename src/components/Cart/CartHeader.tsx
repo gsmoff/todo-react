@@ -12,7 +12,6 @@ const CartHeader = () => {
   const productsInCart = useAppSelector(
     (state: ProductsInCartProps) => state.productsInCart
   );
-
   return (
     <div>
       <CartProductList productsInCart={productsInCart} />

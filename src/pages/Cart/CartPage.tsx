@@ -4,7 +4,7 @@ import { Grid, Typography } from "@mui/material";
 import CartProductList from "components/Cart/CartProductList";
 import CartProductListItemExtended from "components/Cart/CartProductListItemExtended";
 import { useAppSelector } from "redux/hooks";
-
+import { Link } from "react-router-dom";
 type Props = {};
 
 type ProductsInCartProps = {
@@ -35,8 +35,8 @@ const CartPage = () => {
           CartItem={CartProductListItemExtended}
         />
       </Grid>
-
       <CartTotal productsInCart={productsInCart} />
+      <Link to="/checkout">Proceed to checkout</Link>
     </div>
   );
 };
