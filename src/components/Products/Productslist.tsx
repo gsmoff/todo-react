@@ -1,7 +1,6 @@
 import { Grid, Typography } from "@mui/material";
-import React from "react";
 import ProductsListItem from "components/Products/ProductsListItem";
-import productsArray from "components/Products/productsArray";
+import { useAppSelector } from "redux/hooks";
 
 type ProductProps = {
   id: number;
@@ -12,9 +11,10 @@ type ProductProps = {
   price: number;
   image: string;
 };
-type Props = { };
+type Props = {};
 
 const Productslist = () => {
+const productsArray = useAppSelector((state) => state.products)
   return (
     <>
       <Typography

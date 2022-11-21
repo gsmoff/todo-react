@@ -1,9 +1,10 @@
-import React from "react";
-import productsArray, {
-  getProductsObject,
-  Product,
-} from "components/Products/productsArray";
+import { getProductsObject, Product } from "components/Products/productsArray";
 
+import { useAppSelector } from "redux/hooks";
+
+type productsObject = {
+  [key: number]: Product;
+};
 type Props = {
   productsInCart: {
     [id: number]: number;
@@ -15,21 +16,26 @@ type Props = {
 
 const CartTotal = ({
   productsInCart,
-  productsObject = getProductsObject(productsArray),
 }: Props) => {
-  return (
-    <div>
-      Total:{" "}
-      {Object.keys(productsInCart).reduce(
-        (sum, productId) =>
-          sum +
-          productsObject[parseInt(productId)].price *
+  const productsArray = useAppSelector((state) => state.products);
+  const productsObject: productsObject = getProductsObject(productsArray);
+  if (productsArray.length === 0) {
+    return null;
+  } else {
+    return (
+      <div>
+        Total:{" "}
+        {Object.keys(productsInCart).reduce(
+          (sum, productId) =>
+            sum +
+            productsObject[parseInt(productId)].price *
             productsInCart[parseInt(productId)],
-        0
-      )}{" "}
-      $
-    </div>
-  );
+          0
+        )}{" "}
+        $
+      </div>
+    );
+  }
 };
 
 export default CartTotal;

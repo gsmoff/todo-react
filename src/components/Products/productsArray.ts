@@ -15,7 +15,7 @@ const productsArray:Product[] = [
         type: "phone",
         capacity: 64,
         price: 500,
-        image: 'public/images/iphone-gold.webp'
+        image: '/images/iphone-gold.jpg'
     },
     {
         id:2,
@@ -24,7 +24,7 @@ const productsArray:Product[] = [
         type: "phone",
         capacity: 128,
         price: 800,
-        image: 'public/images/iphone-blu.webp'
+        image: '/images/iphone-blu.jpg'
 
     },
     {
@@ -34,7 +34,7 @@ const productsArray:Product[] = [
         type: "phone",
         capacity: 256,
         price: 600,
-        image: 'public/images/iphone-green.webp'
+        image: '/images/iphone-green.jpg'
 
     },
     {
@@ -44,7 +44,7 @@ const productsArray:Product[] = [
         type: "phone",
         capacity: 64,
         price: 500,
-        image: 'public/images/iphone-purple.webp'
+        image: '/images/iphone-purple.jpg'
 
     },
     {
@@ -54,7 +54,7 @@ const productsArray:Product[] = [
         type: "phone",
         capacity: 512,
         price: 700,
-        image: 'public/images/iphone-red.webp'
+        image: '/images/iphone-red.jpg'
 
     },
     {
@@ -64,7 +64,7 @@ const productsArray:Product[] = [
         type: "phone",
         capacity: 64,
         price: 700,
-        image: 'public/images/iphone-silver.webp'
+        image: '/images/iphone-silver.jpg'
 
     },
     {
@@ -74,7 +74,7 @@ const productsArray:Product[] = [
         type: "phone",
         capacity: 128,
         price: 900,
-        image: 'public/images/iphone-yellow.webp'
+        image: '/images/iphone-yellow.jpg'
 
     },
         {
@@ -84,7 +84,7 @@ const productsArray:Product[] = [
         type: "phone",
         capacity: 512,
             price: 700,
-        image: 'public/images/iphone-black.webp'
+        image: '/images/iphone-black.jpg'
         
     },
 ]

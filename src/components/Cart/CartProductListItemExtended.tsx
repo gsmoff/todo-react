@@ -23,7 +23,7 @@ const CartProductListItemExtended = ({ product, productCount }: Props) => {
     (state) => state.productsLikeState[product.id]
   );
 
-  const dispatsh = useAppDispatch();
+  const dispatch = useAppDispatch();
 
   return (
     <Grid item xs={12} sm={4}>
@@ -36,8 +36,8 @@ const CartProductListItemExtended = ({ product, productCount }: Props) => {
             variant="outlined"
             onClick={() =>
               isLiked
-                ? dispatsh(removeLike(product.id))
-                : dispatsh(addLike(product.id))
+                ? dispatch(removeLike(product.id))
+                : dispatch(addLike(product.id))
             }
           >
             {isLiked ? <FavoriteIcon /> : <FavoriteBorderIcon />}
@@ -50,8 +50,8 @@ const CartProductListItemExtended = ({ product, productCount }: Props) => {
             count={productCount}
             onDecrementClick={() => {
               productCount === 1
-                ? dispatsh(removeProductFromCart(product.id))
-                : dispatsh(
+                ? dispatch(removeProductFromCart(product.id))
+                : dispatch(
                     changeProductQuantity({
                       id: product.id,
                       count: productCount - 1,
@@ -59,7 +59,7 @@ const CartProductListItemExtended = ({ product, productCount }: Props) => {
                   );
             }}
             onIncrementClick={() =>
-              dispatsh(
+              dispatch(
                 changeProductQuantity({
                   id: product.id,
                   count: productCount + 1,
@@ -69,7 +69,7 @@ const CartProductListItemExtended = ({ product, productCount }: Props) => {
           />
           <Button
             variant="outlined"
-            onClick={() => dispatsh(removeProductFromCart(product.id))}
+            onClick={() => dispatch(removeProductFromCart(product.id))}
           >
             <DeleteIcon />
           </Button>

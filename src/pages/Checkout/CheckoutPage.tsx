@@ -47,8 +47,9 @@ const CheckoutPage = (props: Props) => {
           adress,
         });
         setIsOrderSend(true);
-      });
-  };
+      })
+    // .catch((error)=>console.log(error))0
+  }
 
   const renderForm = () => {
     return (
